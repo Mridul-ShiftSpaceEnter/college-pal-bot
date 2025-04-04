@@ -1,4 +1,3 @@
-
 import React, { useEffect, useRef } from 'react';
 import { Message } from '@/types/chat';
 
@@ -22,8 +21,20 @@ const ChatMessages: React.FC<ChatMessagesProps> = ({ messages, isTyping }) => {
     <div className="flex-1 p-4 overflow-y-auto bg-college-gray">
       {messages.length === 0 ? (
         <div className="h-full flex flex-col items-center justify-center text-center p-6 relative">
-          {/* Animation background */}
+          {/* Video background */}
           <div className="absolute inset-0 overflow-hidden pointer-events-none">
+            <video 
+              autoPlay 
+              loop 
+              muted 
+              playsInline
+              className="absolute w-full h-full object-cover opacity-30"
+            >
+              <source src="https://cdn.gpteng.co/videos/particles-purple.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+            
+            {/* Keep the existing animated elements as fallback */}
             <div className="absolute -top-16 -left-16 w-64 h-64 bg-college-purple/10 rounded-full blur-3xl animate-pulse"></div>
             <div className="absolute top-1/3 -right-20 w-80 h-80 bg-college-lightPurple/20 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }}></div>
             <div className="absolute -bottom-20 left-1/4 w-72 h-72 bg-college-blue/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '2s' }}></div>
