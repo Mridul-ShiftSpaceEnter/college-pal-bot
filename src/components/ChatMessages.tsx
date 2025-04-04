@@ -1,3 +1,4 @@
+
 import React, { useEffect, useRef } from 'react';
 import { Message } from '@/types/chat';
 
@@ -21,14 +22,14 @@ const ChatMessages: React.FC<ChatMessagesProps> = ({ messages, isTyping }) => {
     <div className="flex-1 p-4 overflow-y-auto bg-college-gray">
       {messages.length === 0 ? (
         <div className="h-full flex flex-col items-center justify-center text-center p-6 relative">
-          {/* Video background */}
+          {/* Video background with higher opacity */}
           <div className="absolute inset-0 overflow-hidden pointer-events-none">
             <video 
               autoPlay 
               loop 
               muted 
               playsInline
-              className="absolute w-full h-full object-cover opacity-30"
+              className="absolute w-full h-full object-cover opacity-60" // Increased opacity from 30% to 60%
             >
               <source src="https://cdn.gpteng.co/videos/particles-purple.mp4" type="video/mp4" />
               Your browser does not support the video tag.
